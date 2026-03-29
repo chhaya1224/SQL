@@ -1,0 +1,16 @@
+// FIND Duplicate Emails // Write a query to report all the duplicate emails.
+
+SELECT email, COUNT(*) AS email_count
+FROM Person
+GROUP BY email
+HAVING COUNT(*) > 1
+ORDER BY email;
+--------------------------------------------------------------------------------------------------------
+Using a Self-Join
+SELECT DISTINCT p1.email
+FROM Person p1
+JOIN Person p2 
+    ON p1.email = p2.email AND p1.id <> p2.id
+ORDER BY p1.email;
+////////////////////////////////////////////////////////////
+p1.id <> p2.id ensures we’re comparing different rows.
