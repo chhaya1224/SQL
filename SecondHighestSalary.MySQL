@@ -22,3 +22,15 @@ solution 2:
 SELECT MAX(salary) AS SecondHighestSalary
 FROM Employee
 WHERE salary <(SELECT MAZ(salary) FROM Employee ) ;
+===========================================================================
+ Nth Lowest Salary
+SELECT DISTINCT salary
+FROM Employee
+ORDER BY salary ASC
+LIMIT 1 OFFSET N-1;
+==============================================================
+ Nth high Salary
+SELECT DISTINCT salary
+FROM Employee
+ORDER BY salary desc 
+LIMIT 1 OFFSET N-1;
